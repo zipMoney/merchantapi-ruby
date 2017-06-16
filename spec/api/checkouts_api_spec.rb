@@ -13,14 +13,14 @@ require 'json'
 describe 'CheckoutsApi' do
   before do
     # run before each test
-    
+    auth = JSON.parse(File.read('./spec/auth.json'))
+
     ZipMoney.configure do |c|
       c.environment = :sandbox;
-      #c.debugging = true;
-      c.api_key['Authorization'] = "test";
+      c.api_key['Authorization'] = auth["api_key"];
       c.api_key_prefix['Authorization'] = "Bearer";
     end
-
+    
     @instance = ZipMoney::CheckoutsApi.new
     @payload_helper = ZipMoney::PayloadHelper.new
   end

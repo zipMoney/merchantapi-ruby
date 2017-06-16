@@ -2,7 +2,6 @@
 #ZipMoney Merchant API Initial build
 #zipMoney Merchant API version: 2017-03-01
 
-
 require 'spec_helper'
 
 describe ZipMoney::Configuration do
@@ -12,6 +11,7 @@ describe ZipMoney::Configuration do
     # uncomment below to setup host and base_path
     #require 'URI'
     uri = URI.parse("https://api.sandbox.zipmoney.com.au/merchant/v1")
+
     ZipMoney.configure do |c|
       c.host = uri.host
       c.base_path = uri.path
@@ -23,6 +23,7 @@ describe ZipMoney::Configuration do
       # uncomment below to test default value of the base path
       expect(config.base_url).to eq("https://api.sandbox.zipmoney.com.au/merchant/v1")
     end
+
     # it 'should remove trailing slashes' do
     #   [nil, '', '/', '//'].each do |base_path|    
     #     config.base_path = base_path
