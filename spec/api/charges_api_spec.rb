@@ -15,8 +15,10 @@ describe 'ChargesApi' do
 
     ZipMoney.configure do |c|
       c.environment = :sandbox;
+      c.host = "api.sandbox.zipmoney.com.au:81"
       c.api_key['Authorization'] = auth["api_key"];
       c.api_key_prefix['Authorization'] = "Bearer";
+      c.debugging = true;
     end
     @instance = ZipMoney::ChargesApi.new
     @payload_helper = ZipMoney::PayloadHelper.new
@@ -68,26 +70,17 @@ describe 'ChargesApi' do
   # @return [Charge]
   describe 'charges_create test' do
     it "should work" do
-        @checkoutapi = ZipMoney::CheckoutsApi.new
-        @payload = @payload_helper.checkout_request;      
-        result = @checkoutapi.checkouts_create(@payload);
-        p result
-        ## Approve the checkout_id
-        approve_req = {:body => { "publicCheckoutId" => result.id, "consumerId" => "31638", "merchantId" => 1, "approveRequest" => true }} 
-          # {
-          #   "publicCheckoutId":"co_xLtHVIQVBKMx5Gsb6u3N23",
-          #   "consumerId":"31638",
-          #   "merchantId":"1",
-          #   "approveRequest": true
-          # }
-        
-        request = Typhoeus::Request.new("http://e2eapi.sandbox.zipmoney.com.au/merchant/api/v2/UpdateCheckout", approve_req)
-       # res = request.run
-        #p res
-        @payload = @payload_helper.charge_request;
-        @payload[:body].authority.value = result.id;
-        result = @instance.charges_create(@payload);
-        puts result
+      #   @checkoutapi = ZipMoney::CheckoutsApi.new
+      #   @payload = @payload_helper.checkout_request;      
+      #   result = @checkoutapi.checkouts_create(@payload);
+      #   @payload = @payload_helper.charge_request;
+      #   @payload[:idempotency_key] = 1111
+      #   @payload[:body].authority.value = result.id;
+      # begin
+      #   result = @instance.charges_create(@payload);
+      # rescue ZipMoney::ApiError => e
+      #   puts e.response_body
+      # end  
     end
   end
 

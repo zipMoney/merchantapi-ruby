@@ -41,14 +41,14 @@ describe 'CheckoutsApi' do
   # @param [Hash] opts the optional parameters
   # @option opts [CreateCheckoutRequest] :body 
   # @return [Checkout]
-  describe 'checkouts_create test' do
-    it "should work" do
-      @payload = @payload_helper.checkout_request;
+  # describe 'checkouts_create test' do
+  #   it "should work" do
+  #     @payload = @payload_helper.checkout_request;
 
-      result = @instance.checkouts_create(@payload);
+  #     result = @instance.checkouts_create(@payload);
       
-      expect(result.uri.nil?).to eq false
-      expect(result.id.nil?).to eq false
-    end
-  end
+  #     expect(result.uri.nil?).to eq false
+  #     expect(result.id.nil?).to eq false
+  #   end
+  # end
 end

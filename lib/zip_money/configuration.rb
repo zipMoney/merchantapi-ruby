@@ -153,7 +153,8 @@ module ZipMoney
       @force_ending_format = false
       @logger = defined?(Rails) ? Rails.logger : Logger.new(STDOUT)
       @api_version = '2017-03-01'
-
+      @retry_interval = 0
+      @num_retries =  3
       yield(self) if block_given?
     end
 
