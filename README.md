@@ -5,7 +5,7 @@ ZipMoney - the Ruby gem for the Merchant API
 ZipMoney Merchant API Initial build
 
 - API version: 2017-03-01
-- Package version: 1.0.0
+- Package version: 1.0.1
 
 ## Installation
 
@@ -28,7 +28,7 @@ or publish the gem to a gem hosting service, e.g. [RubyGems](https://rubygems.or
 
 Finally add this to the Gemfile:
 
-    gem 'zipmoney_merchantapi', '~> 1.0.0'
+    gem 'zipmoney_merchantapi', '~> 1.0.1'
 
 ### Install from Git
 

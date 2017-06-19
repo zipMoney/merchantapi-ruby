@@ -1,7 +1,7 @@
 PATH
   remote: .
   specs:
-    zip_money (1.0.0)
+    zipmoney_merchantapi (1.0.0)
       json (~> 1.8, >= 1.8.3)
       typhoeus (~> 1.0, >= 1.0.1)
 
@@ -63,7 +63,7 @@ DEPENDENCIES
   rspec (~> 3.4, >= 3.4.0)
   vcr (~> 3.0, >= 3.0.1)
   webmock (~> 1.24, >= 1.24.3)
-  zip_money!
+  zipmoney_merchantapi!
 
 BUNDLED WITH
    1.14.3
