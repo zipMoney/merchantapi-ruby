@@ -58,23 +58,6 @@ ZipMoney.configure do |config|
   # Uncomment the following line to set a prefix for the API key, e.g. 'Bearer' (defaults to nil)
   #config.api_key_prefix['Authorization'] = 'Bearer'
 end
-
-api_instance = ZipMoney::ChargesApi.new
-
-id = "id_example" # String | The id of the authorised charge
-
-opts = { 
-  idempotency_key: "idempotency_key_example" # String | The unique idempotency key.
-}
-
-begin
-  #Cancel a charge
-  result = api_instance.charges_cancel(id, opts)
-  p result
-rescue ZipMoney::ApiError => e
-  puts "Exception when calling ChargesApi->charges_cancel: #{e}"
-end
-
 ```
 
 ## Documentation for API Endpoints
