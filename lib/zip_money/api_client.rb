@@ -24,7 +24,12 @@ module ZipMoney
     # @option config [Configuration] Configuration for initializing the object, default to Configuration.default
     def initialize(config = Configuration.default)
       @config = config
-      @user_agent = "Swagger-Codegen/#{VERSION}/ruby"
+      
+      @user_agent = @config.user_agent
+      if @config.platform
+        @user_agent = @config.platform + "/" + @config.user_agent
+      end
+      
       @default_headers = {
         'Content-Type' => "application/json",
         'User-Agent' => @user_agent,        

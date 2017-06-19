@@ -134,6 +134,8 @@ module ZipMoney
 
     attr_accessor :platform
 
+    attr_accessor :user_agent
+
     def initialize
       @scheme = 'https'
       @host = 'api.sandbox.zipmoney.com.au'
@@ -154,7 +156,9 @@ module ZipMoney
       @logger = defined?(Rails) ? Rails.logger : Logger.new(STDOUT)
       @api_version = '2017-03-01'
       @retry_interval = 0
-      @num_retries =  3
+      @num_retries =  3      
+      @user_agent = "merchantapi/#{VERSION}/ruby"
+
       yield(self) if block_given?
     end
 
@@ -210,6 +214,14 @@ module ZipMoney
       'Basic ' + ["#{username}:#{password}"].pack('m').delete("\r\n")
     end
 
+    def user_agent=(user_agent)
+      @user_agent = user_agent
+    end
+    
+    def platform=(platform)
+      @platform = platform
+    end
+    
     # Returns Auth Settings hash for api client.
     def auth_settings
       {

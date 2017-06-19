@@ -15,7 +15,7 @@ describe 'ChargesApi' do
 
     ZipMoney.configure do |c|
       c.environment = :sandbox;
-      c.host = "api.sandbox.zipmoney.com.au:81"
+      c.host = "api.sandbox.zipmoney.com.au"
       c.api_key['Authorization'] = auth["api_key"];
       c.api_key_prefix['Authorization'] = "Bearer";
       c.debugging = true;
@@ -70,17 +70,17 @@ describe 'ChargesApi' do
   # @return [Charge]
   describe 'charges_create test' do
     it "should work" do
-      #   @checkoutapi = ZipMoney::CheckoutsApi.new
-      #   @payload = @payload_helper.checkout_request;      
-      #   result = @checkoutapi.checkouts_create(@payload);
-      #   @payload = @payload_helper.charge_request;
-      #   @payload[:idempotency_key] = 1111
-      #   @payload[:body].authority.value = result.id;
-      # begin
-      #   result = @instance.charges_create(@payload);
-      # rescue ZipMoney::ApiError => e
-      #   puts e.response_body
-      # end  
+        @checkoutapi = ZipMoney::CheckoutsApi.new
+        @payload = @payload_helper.checkout_request;      
+        result = @checkoutapi.checkouts_create(@payload);
+        @payload = @payload_helper.charge_request;
+        #@payload[:idempotency_key] = 1111
+        @payload[:body].authority.value = result.id;
+      begin
+        result = @instance.charges_create(@payload);
+      rescue ZipMoney::ApiError => e
+        puts e.response_body
+      end  
     end
   end
 
