@@ -9,7 +9,7 @@ $:.push File.expand_path("../lib", __FILE__)
 require "zip_money/version"
 
 Gem::Specification.new do |s|
-  s.name        = "zip_money"
+  s.name        = "zipmoney_merchantapi"
   s.version     = ZipMoney::VERSION
   s.platform    = Gem::Platform::RUBY
   s.authors     = ["zipMoney Payments"]

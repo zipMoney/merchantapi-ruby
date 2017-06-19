@@ -14,27 +14,27 @@ ZipMoney Merchant API Initial build
 To build the Ruby code into a gem:
 
 ```shell
-gem build zip_money.gemspec
+gem build zipmoney_merchantapi.gemspec
 ```
 
 Then either install the gem locally:
 
 ```shell
-gem install ./zip_money-1.0.0.gem
+gem install ./zipmoney_merchantapi.gem
 ```
-(for development, run `gem install --dev ./zip_money-1.0.0.gem` to install the development dependencies)
+(for development, run `gem install --dev ./zipmoney_merchantapi.gem` to install the development dependencies)
 
 or publish the gem to a gem hosting service, e.g. [RubyGems](https://rubygems.org/).
 
 Finally add this to the Gemfile:
 
-    gem 'zip_money', '~> 1.0.0'
+    gem 'zipmoney_merchantapi', '~> 1.0.0'
 
 ### Install from Git
 
 If the Ruby gem is hosted at a git repository: https://github.com/GIT_USER_ID/GIT_REPO_ID, then add the following in the Gemfile:
 
-    gem 'zip_money', :git => 'https://github.com/GIT_USER_ID/GIT_REPO_ID.git'
+    gem 'zipmoney_merchantapi', :git => 'https://github.com/GIT_USER_ID/GIT_REPO_ID.git'
 
 ### Include the Ruby code directly
 
@@ -49,7 +49,7 @@ ruby -Ilib script.rb
 Please follow the [installation](#installation) procedure and then run the following code:
 ```ruby
 # Load the gem
-require 'zip_money'
+require 'zipmoney_merchantapi'
 
 # Setup authorization
 ZipMoney.configure do |config|
