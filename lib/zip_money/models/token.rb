@@ -28,7 +28,7 @@ module ZipMoney
     end
 
     # Attribute type mapping.
-    def self.swagger_types
+    def self.zip_types
       {
         :'id' => :'String',
         :'value' => :'String',
@@ -124,7 +124,7 @@ module ZipMoney
     # @return [Object] Returns the model itself
     def build_from_hash(attributes)
       return nil unless attributes.is_a?(Hash)
-      self.class.swagger_types.each_pair do |key, type|
+      self.class.zip_types.each_pair do |key, type|
         if type =~ /\AArray<(.*)>/i
           # check to ensure the input is an array given that the the attribute
           # is documented as an array but the input is not

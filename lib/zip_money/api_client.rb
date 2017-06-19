@@ -24,7 +24,7 @@ module ZipMoney
     # @option config [Configuration] Configuration for initializing the object, default to Configuration.default
     def initialize(config = Configuration.default)
       @config = config
-      
+
       @user_agent = @config.user_agent
       if @config.platform
         @user_agent = @config.platform + "/" + @config.user_agent
@@ -311,7 +311,7 @@ module ZipMoney
 
     # Sets user agent in HTTP header
     #
-    # @param [String] user_agent User agent (e.g. swagger-codegen/ruby/1.0.0)
+    # @param [String] user_agent User agent (e.g. merchantapi/ruby/1.0.0)
     def user_agent=(user_agent)
       @user_agent = user_agent
       @default_headers['User-Agent'] = @user_agent

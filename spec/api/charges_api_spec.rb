@@ -18,7 +18,7 @@ describe 'ChargesApi' do
       c.host = "api.sandbox.zipmoney.com.au"
       c.api_key['Authorization'] = auth["api_key"];
       c.api_key_prefix['Authorization'] = "Bearer";
-      c.debugging = true;
+      #c.debugging = true;
     end
     @instance = ZipMoney::ChargesApi.new
     @payload_helper = ZipMoney::PayloadHelper.new
